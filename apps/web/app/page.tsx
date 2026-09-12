@@ -1,21 +1,24 @@
-import Link from "next/link";
+import { ChallengeCard } from "@/components/challenge/ChallengeCard";
+import { todaysChallenge } from "@/data/challenges";
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-6 bg-background px-6 py-16 text-center">
-      <h1 className="text-heading-1 font-semibold tracking-tight text-text-primary">
-        Camera Confidence
-      </h1>
-      <p className="max-w-md text-body-lg text-text-secondary">
-        A calm space to practice speaking on camera, one small attempt at a
-        time.
-      </p>
-      <Link
-        href="/practice"
-        className="flex h-12 items-center justify-center rounded-full bg-primary px-6 text-body font-medium text-white transition-colors hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-      >
-        Start Practice
-      </Link>
+    <main className="mx-auto flex w-full max-w-[480px] flex-1 flex-col items-center gap-10 bg-background px-6 py-16 text-center sm:py-24">
+      <div className="flex flex-col items-center gap-5">
+        <p className="text-body-sm font-semibold tracking-wide text-text-muted">
+          Camera Confidence
+        </p>
+        <h1 className="text-[clamp(2rem,6vw,3.25rem)] leading-[1.15] font-bold text-text-primary">
+          Take it one try at a time.
+        </h1>
+        <p className="max-w-[34ch] text-body text-text-secondary">
+          A private space to practice speaking on camera.
+        </p>
+      </div>
+
+      <ChallengeCard challenge={todaysChallenge} href="/practice" />
+
+      <p className="text-body-sm text-text-muted">No pressure. Just practice.</p>
     </main>
   );
 }
