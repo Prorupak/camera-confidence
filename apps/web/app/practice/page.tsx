@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { CameraPlaceholder } from "@/components/practice/CameraPlaceholder";
-import { Button } from "@/components/ui/Button";
+import { PracticeSession } from "@/components/practice/PracticeSession";
 import { todaysChallenge } from "@/data/challenges";
 
 export default function Practice() {
@@ -36,16 +35,7 @@ export default function Practice() {
         </h1>
       </div>
 
-      <CameraPlaceholder />
-
-      <div className="flex flex-col items-center gap-1 text-center text-body text-text-secondary">
-        <p>Take a breath.</p>
-        <p>There&apos;s no perfect way to do this.</p>
-      </div>
-
-      <Button size="lg" className="w-full">
-        Start
-      </Button>
+      <PracticeSession />
     </div>
   );
 }
