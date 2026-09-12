@@ -16,6 +16,7 @@
   --primary-hover: #1d4ed8;
   --primary-active: #1e40af;
   --primary-subtle: #eff6ff;
+  --primary-on: #ffffff;
 
   /* Semantic */
   --success: #16a34a;
@@ -27,6 +28,23 @@
   --recording: #dc2626;
   --ready: #16a34a;
   --completed: #57534e;
+
+  /* Focus */
+  --focus-ring: #2563eb;
+
+  /* Motion (design-system.md §38) */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+  }
 }
 
 @theme inline {
@@ -45,6 +63,7 @@
   --color-primary-hover: var(--primary-hover);
   --color-primary-active: var(--primary-active);
   --color-primary-subtle: var(--primary-subtle);
+  --color-primary-on: var(--primary-on);
 
   /* Semantic */
   --color-success: var(--success);
@@ -56,6 +75,9 @@
   --color-recording: var(--recording);
   --color-ready: var(--ready);
   --color-completed: var(--completed);
+
+  /* Focus */
+  --color-focus-ring: var(--focus-ring);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -127,6 +149,7 @@
     --primary-hover: #60a5fa;
     --primary-active: #2563eb;
     --primary-subtle: #1e293b;
+    --primary-on: #0c0a09;
 
     /* Semantic */
     --success: #22c55e;
@@ -138,6 +161,9 @@
     --recording: #ef4444;
     --ready: #22c55e;
     --completed: #d6d3d1;
+
+    /* Focus */
+    --focus-ring: #60a5fa;
   }
 }
 
