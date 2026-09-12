@@ -1,26 +1,148 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Neutral */
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --border: #e7e5e4;
+  --text-primary: #1c1917;
+  --text-secondary: #57534e;
+  --text-muted: #a8a29e;
+
+  /* Brand */
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-active: #1e40af;
+  --primary-subtle: #eff6ff;
+
+  /* Semantic */
+  --success: #16a34a;
+  --warning: #d97706;
+  --error: #dc2626;
+  --info: #2563eb;
+
+  /* Practice states */
+  --recording: #dc2626;
+  --ready: #16a34a;
+  --completed: #57534e;
 }
 
 @theme inline {
+  /* Neutral */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-border: var(--border);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  /* Brand */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active: var(--primary-active);
+  --color-primary-subtle: var(--primary-subtle);
+
+  /* Semantic */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+
+  /* Practice states */
+  --color-recording: var(--recording);
+  --color-ready: var(--ready);
+  --color-completed: var(--completed);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Type scale (design-system.md §9-12: Display, Heading 1-3, Body Large/Body/Body Small, Caption, Label) */
+  --text-display: 2.5rem;
+  --text-display--line-height: 1.1;
+  --text-heading-1: 2rem;
+  --text-heading-1--line-height: 1.2;
+  --text-heading-2: 1.5rem;
+  --text-heading-2--line-height: 1.25;
+  --text-heading-3: 1.25rem;
+  --text-heading-3--line-height: 1.3;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.5;
+  --text-body: 1rem;
+  --text-body--line-height: 1.5;
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.5;
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.4;
+  --text-label: 0.875rem;
+  --text-label--line-height: 1.4;
+
+  /* Radius (design-system.md §15) */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Shadows (design-system.md §17) */
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* Z-index (design-system.md §42) */
+  --z-index-dropdown: 10;
+  --z-index-sticky: 20;
+  --z-index-overlay: 30;
+  --z-index-modal: 40;
+  --z-index-toast: 50;
+
+  /*
+   * Spacing (design-system.md §13: 4/8/12/16/20/24/32/40/48/64/80/96) and
+   * breakpoints (design-system.md §40: Mobile/Tablet/Desktop/Large Desktop)
+   * are intentionally NOT redefined here — Tailwind's default spacing scale
+   * (0.25rem steps: 1,2,3,4,5,6,8,10,12,16,20,24 => 4,8,12,16,20,24,32,40,48,
+   * 64,80,96px) and default breakpoints (sm/md/lg/xl) already satisfy the
+   * documented scale, so overriding them would be a premature abstraction.
+   */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Neutral */
+    --background: #0c0a09;
+    --foreground: #f5f5f4;
+    --surface: #1c1917;
+    --surface-elevated: #292524;
+    --border: #44403c;
+    --text-primary: #f5f5f4;
+    --text-secondary: #d6d3d1;
+    --text-muted: #78716c;
+
+    /* Brand */
+    --primary: #3b82f6;
+    --primary-hover: #60a5fa;
+    --primary-active: #2563eb;
+    --primary-subtle: #1e293b;
+
+    /* Semantic */
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --info: #3b82f6;
+
+    /* Practice states */
+    --recording: #ef4444;
+    --ready: #22c55e;
+    --completed: #d6d3d1;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
