@@ -1,25 +1,43 @@
 # Camera Confidence
 
-A simple practice tool for people who feel nervous or uncomfortable
-when speaking on camera.
+> Practice speaking. Build confidence. One recording at a time.
 
-## Core idea
+## Overview
 
-Practice → Record → Reflect → Try again
+Camera Confidence is a private practice tool...
 
-## First user
+## Current Status
 
-Me.
+v0.2.0 — Camera Prototype
 
-## First problem
+## Quick Start
 
-I get nervous when I turn on the camera and struggle to speak naturally.
+...
 
-## MVP
+## Project Structure
 
-- Give the user a short speaking challenge
-- Record the response
-- Let them watch/listen to their attempt
-- Give simple feedback
-- Encourage another attempt
-- Track practice progress
+...
+
+## Documentation
+
+### Product
+- [Vision](docs/product/vision.md)
+- [Problem](docs/product/problem.md)
+- [User Experience](docs/product/user-experience.md)
+- [Product Principles](docs/product/product-principles.md)
+- [Roadmap](docs/product/roadmap.md)
+
+### Design
+- [Design Principles](docs/design/design-principles.md)
+- [Design System](docs/design/design-system.md)
+
+### Engineering
+- [Architecture](docs/engineering/architecture.md)
+- [Tech Stack](docs/engineering/tech-stack.md)
+- [Development Workflow](docs/engineering/development-workflow.md)
+
+### Specifications
+- [Camera Recording](docs/specs/camera/camera-recording.md)
+
+### Decisions
+- [ADR-001: MediaRecorder](docs/decisions/ADR-001-media-recorder.md)
