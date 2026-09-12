@@ -87,6 +87,36 @@ export function deviceEndedError(): MediaError {
   };
 }
 
+/** MediaRecorder is unavailable in this browser. */
+export function recordingUnsupportedError(): MediaError {
+  return {
+    type: "browser-unsupported",
+    title: "Recording isn't supported",
+    message:
+      "Your browser doesn't support local video recording. Please try a modern browser such as Chrome, Safari, Edge, or Firefox.",
+  };
+}
+
+/** MediaRecorder failed to start or threw during recording. */
+export function recordingFailedError(): MediaError {
+  return {
+    type: "device-error",
+    title: "Recording couldn't be started",
+    message:
+      "Something went wrong while starting the recording. Please try again.",
+  };
+}
+
+/** The camera/microphone connection was lost while a recording was in progress. */
+export function recordingStoppedUnexpectedlyError(): MediaError {
+  return {
+    type: "device-error",
+    title: "Recording stopped unexpectedly",
+    message:
+      "We couldn't finish that recording. Your camera is still available — you can try again.",
+  };
+}
+
 export function getMediaErrorMessage(error: unknown): MediaError {
   if (error instanceof DOMException) {
     const mapped = fromErrorName(error.name);
