@@ -1,7 +1,9 @@
 import { ChallengeCard } from "@/components/challenge/ChallengeCard";
-import { todaysChallenge } from "@/data/challenges";
+import { getChallenges } from "@/data/challenges";
 
 export default function Home() {
+  const challenges = getChallenges();
+
   return (
     <main className="mx-auto flex w-full max-w-[480px] flex-1 flex-col items-center gap-10 bg-background px-6 py-16 text-center sm:py-24">
       <div className="flex flex-col items-center gap-5">
@@ -16,7 +18,11 @@ export default function Home() {
         </p>
       </div>
 
-      <ChallengeCard challenge={todaysChallenge} href="/practice" />
+      <div className="flex w-full flex-col gap-5">
+        {challenges.map((challenge) => (
+          <ChallengeCard key={challenge.id} challenge={challenge} />
+        ))}
+      </div>
 
       <p className="text-body-sm text-text-muted">No pressure. Just practice.</p>
     </main>
